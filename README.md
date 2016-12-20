@@ -5,7 +5,7 @@
 [![](https://images.microbadger.com/badges/commit/lachlanevenson/k8s-helm.svg)](http://microbadger.com/images/lachlanevenson/k8s-helm "Get your own commit badge on microbadger.com")
 
 # Supported tags and respective `Dockerfile` links
-* `2.1.0`, `latest`    [(2.1.0/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.1.0/Dockerfile)
+* `2.1.1`, `latest`    [(2.1.1/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.1.1/Dockerfile)
 * `2.0.2`,     [(2.0.2/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.0.2/Dockerfile)
 
 ## Overview
