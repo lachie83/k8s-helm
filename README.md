@@ -5,9 +5,9 @@
 [![](https://images.microbadger.com/badges/commit/lachlanevenson/k8s-helm.svg)](http://microbadger.com/images/lachlanevenson/k8s-helm "Get your own commit badge on microbadger.com")
 
 # Supported tags and respective `Dockerfile` links
-* `2.2.1`, `latest`    [(2.2.1/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.2.1/Dockerfile)
-* `2.1.3`,     [(2.1.3/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.1.3/Dockerfile)
-* `2.0.2`,     [(2.0.2/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.0.2/Dockerfile)
+* `v2.2.2`, `latest`    [(v2.2.2/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.2.2/Dockerfile)
+* `v2.1.3`,     [(v2.1.3/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.1.3/Dockerfile)
+* `v2.0.2`,     [(v2.0.2/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.0.2/Dockerfile)
 
 ## Overview
 This container provides the Helm client for use with Kubernetes
