@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: lachlanevenson/docker-make
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Helm container
+          command: |
+            DOCKER_TAG=$CIRCLE_BRANCH make docker_build
+      - run:
+          name: Test Helm container
+          command: |
+            DOCKER_TAG=$CIRCLE_BRANCH make test
+      - run:
+          name: Publish Helm container
+          command: |
+            echo $DOCKER_PASS | base64 -d > ${HOME}/docker_pass
+            docker login -u $DOCKER_USER -p "$(cat ${HOME}/docker_pass)"
+            make docker_push
