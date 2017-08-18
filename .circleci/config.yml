@@ -1,0 +1,23 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+
+  services:
+    - docker
+
+dependencies:
+
+  override:
+    - DOCKER_TAG=${CIRCLE_BRANCH} make docker_build
+
+test:
+  # Helm lint the chart
+  post:
+    - DOCKER_TAG=${CIRCLE_BRANCH} make test
+
+deployment:
+  hub:
+    commands:
+      - echo $DOCKER_PASS | base64 --decode > ${HOME}/docker_pass
+      - docker login -u $DOCKER_USER -p "$(cat ${HOME}/docker_pass)" quay.io
+      - make docker_push
