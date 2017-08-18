@@ -3,6 +3,10 @@ default: docker_build
 DOCKER_IMAGE ?= lachlanevenson/k8s-helm
 DOCKER_TAG ?= `git rev-parse --abbrev-ref HEAD`
 
+ifneq ($(DOCKER_TAG), master)
+	DOCKER_TAG = latest
+endif
+
 docker_build:
 	@docker build \
 	  --build-arg VCS_REF=`git rev-parse --short HEAD` \
