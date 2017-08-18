@@ -7,7 +7,7 @@ jobs:
       - run:
           name: Build Helm container
           command: |
-            DOCKER_TAG=$ CIRCLE_BRANCH make docker_build
+            DOCKER_TAG=$CIRCLE_BRANCH make docker_build
       - run:
           name: Test Helm container
           command: |
