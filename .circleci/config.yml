@@ -5,6 +5,7 @@ jobs:
       - image: lachlanevenson/docker-make
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Build Helm container
           command: |
