@@ -17,6 +17,6 @@ jobs:
       - run:
           name: Test Helm container
           command: |
-            echo $DOCKER_PASS | base64 --decode > ${HOME}/docker_pass
+            echo $DOCKER_PASS | base64 -d > ${HOME}/docker_pass
             docker login -u $DOCKER_USER -p "$(cat ${HOME}/docker_pass)" quay.io
             make docker_push
