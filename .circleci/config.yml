@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: lachlanevenson/docker-make
     steps:
+      - checkout
       - run:
           name: Build Helm container
           command: |
