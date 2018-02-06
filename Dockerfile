@@ -1,6 +1,7 @@
 FROM alpine
 
-MAINTAINER Lachlan Evenson <lachlan.evenson@gmail.com>
+LABEL maintainer="Lachlan Evenson <lachlan.evenson@gmail.com>"
+LABEL com.jumia.food.maintainer="Fábio Alves <fabio.alves@jumia.com>"
 
 ARG VCS_REF
 ARG BUILD_DATE
@@ -11,7 +12,7 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.docker.dockerfile="/Dockerfile"
 
-ENV HELM_LATEST_VERSION="v2.7.2"
+ENV HELM_LATEST_VERSION="v2.8.0"
 
 RUN apk add --update ca-certificates \
  && apk add --update -t deps wget \
