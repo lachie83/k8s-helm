@@ -1,6 +1,6 @@
 FROM alpine
 
-MAINTAINER Lachlan Evenson <lachlan.evenson@gmail.com>
+LABEL maintainer="Lachlan Evenson <lachlan.evenson@gmail.com>"
 
 ARG VCS_REF
 ARG BUILD_DATE
