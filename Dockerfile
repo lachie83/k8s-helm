@@ -1,15 +1,15 @@
 FROM alpine
 
-LABEL maintainer="Lachlan Evenson <lachlan.evenson@gmail.com>"
+MAINTAINER Karl Alnebratt <karl.alnebratt@gmail.com>
 
-ARG VCS_REF
-ARG BUILD_DATE
+ENV KUBE_LATEST_VERSION="v1.10.3"
 
-# Metadata
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/lachie83/k8s-helm" \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.docker.dockerfile="/Dockerfile"
+RUN apk add --update ca-certificates \
+ && apk add --update -t deps curl \
+ && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
+ && chmod +x /usr/local/bin/kubectl \
+ && apk del --purge deps \
+ && rm /var/cache/apk/*
 
 ENV HELM_LATEST_VERSION="v2.9.1"
 
@@ -23,5 +23,5 @@ RUN apk add --update ca-certificates \
  && rm /var/cache/apk/* \
  && rm -f /helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz
 
-ENTRYPOINT ["helm"]
+ENTRYPOINT ["kubectl"]
 CMD ["help"]
