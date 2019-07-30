@@ -10,7 +10,7 @@
 
 # Supported tags and respective `Dockerfile` links
 * `v2.14.2`, `latest`    [(v2.14.2/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.14.2/Dockerfile)
-* `v3.0.0-alpha.1`,  [(v3.0.0-alpha.1/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v3.0.0-alpha.1/Dockerfile)
+* `v3.0.0-alpha.2`,  [(v3.0.0-alpha.2/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v3.0.0-alpha.2/Dockerfile)
 * `v2.13.1`,    [(v2.13.1/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.13.1/Dockerfile)
 * `v2.12.3`,    [(v2.12.3/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.12.3/Dockerfile)
 * `v2.11.0`,    [(v2.11.0/Dockerfile)](https://github.com/lachie83/k8s-helm/blob/v2.11.0/Dockerfile)
