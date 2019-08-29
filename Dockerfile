@@ -11,7 +11,7 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.docker.dockerfile="/Dockerfile"
 
-ENV HELM_LATEST_VERSION="v3.0.0-alpha.2"
+ENV HELM_LATEST_VERSION="v3.0.0-beta.2"
 
 RUN apk add --update ca-certificates \
  && apk add --update -t deps wget git openssl bash \
