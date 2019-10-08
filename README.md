@@ -1,7 +1,7 @@
 # Helm Client
 
 ### CircleCI Build Status
-[![CircleCI](https://circleci.com/gh/lachie83/k8s-helm.svg?style=svg)](https://circleci.com/gh/lachie83/k8s-helm)
+[![Build Status](https://dev.azure.com/laevenso/k8s/_apis/build/status/lachie83.k8s-helm?branchName=master)](https://dev.azure.com/laevenso/k8s/_build/latest?definitionId=2&branchName=master)
 
 ### Container Details
 [![](https://images.microbadger.com/badges/image/lachlanevenson/k8s-helm.svg)](http://microbadger.com/images/lachlanevenson/k8s-helm "Get your own image badge on microbadger.com")
