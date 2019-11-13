@@ -6,10 +6,11 @@ ARG VCS_REF
 ARG BUILD_DATE
 
 # Metadata
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/lachie83/k8s-helm" \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.docker.dockerfile="/Dockerfile"
+LABEL org.opencontainers.image.title="lachlanevenson/k8s-helm" \
+      org.opencontainers.image.url="https://helm.sh/docs/" \
+      org.opencontainers.image.revision=$VCS_REF \
+      org.opencontainers.image.source="https://github.com/lachie83/k8s-helm" \
+      org.opencontainers.image.created=$BUILD_DATE
 
 ENV HELM_LATEST_VERSION="v3.0.0"
 
