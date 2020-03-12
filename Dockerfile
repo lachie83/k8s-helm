@@ -12,7 +12,7 @@ LABEL org.opencontainers.image.title="lachlanevenson/k8s-helm" \
       org.opencontainers.image.source="https://github.com/lachie83/k8s-helm" \
       org.opencontainers.image.created=$BUILD_DATE
 
-ENV HELM_LATEST_VERSION="v3.1.1"
+ENV HELM_LATEST_VERSION="v3.1.2"
 
 RUN apk add --update ca-certificates \
  && apk add --update -t deps wget git openssl bash \
