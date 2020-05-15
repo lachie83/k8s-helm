@@ -1,0 +1,36 @@
+name: Build and Publish Helm container
+
+on:
+  push:
+    branches:
+      - master
+      - v*
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Helm container
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: lachlanevenson/k8s-helm
+        build_args: VCS_REF=`git rev-parse --short HEAD`,BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+        tag_with_ref: true
+    - name: Test Helm container
+      run: GIT_BRANCH=${GITHUB_REF#refs/heads/} make test
+    - name: Publish Helm container
+      if: ${{ startsWith(github.ref, 'refs/heads/m') || startsWith(github.ref, 'refs/heads/v') }}
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: lachlanevenson/k8s-helm
+        build_args: VCS_REF=`git rev-parse --short HEAD`,BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+        tag_with_ref: true
+        push: true
