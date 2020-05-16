@@ -1,6 +1,7 @@
 # Helm Client
 
-### Build and Publish Helm container GitHub action status
+### Build GitHub Action Status
+
 ![Build and Publish Helm container](https://github.com/lachie83/k8s-helm/workflows/Build%20and%20Publish%20Helm%20container/badge.svg)
 
 ### Container Details
