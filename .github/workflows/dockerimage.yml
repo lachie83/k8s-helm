@@ -19,6 +19,7 @@ jobs:
         repository: lachlanevenson/k8s-helm
         build_args: VCS_REF=`git rev-parse --short HEAD`,BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
         tag_with_ref: true
+        push: false
     - name: Test Helm container
       run: GIT_BRANCH=${GITHUB_REF#refs/heads/} make test
     - name: Publish Helm container
@@ -30,4 +31,3 @@ jobs:
         repository: lachlanevenson/k8s-helm
         build_args: VCS_REF=`git rev-parse --short HEAD`,BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
         tag_with_ref: true
-        push: true
