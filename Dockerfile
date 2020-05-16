@@ -4,7 +4,7 @@ LABEL maintainer="Lachlan Evenson <lachlan.evenson@gmail.com>"
 
 # Metadata
 LABEL org.opencontainers.image.title="lachlanevenson/k8s-helm" \
-      org.opencontainers.image.url="https://helm.sh/docs/" \
+      org.opencontainers.image.url="https://helm.sh/docs/"
 
 ENV HELM_LATEST_VERSION="v3.2.1"
 

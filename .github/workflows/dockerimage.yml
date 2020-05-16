@@ -19,6 +19,7 @@ jobs:
         repository: lachlanevenson/k8s-helm
         add_git_labels:  true
         tag_with_ref: true
+        push: false
     - name: Test Helm container
       run: GIT_BRANCH=${GITHUB_REF#refs/heads/} make test
     - name: Publish Helm container
