@@ -17,7 +17,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: lachlanevenson/k8s-helm
-        build_args: VCS_REF=`git rev-parse --short HEAD`,BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
+        add_git_labels:  true
         tag_with_ref: true
     - name: Test Helm container
       run: GIT_BRANCH=${GITHUB_REF#refs/heads/} make test
@@ -28,6 +28,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: lachlanevenson/k8s-helm
-        build_args: VCS_REF=`git rev-parse --short HEAD`,BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
         tag_with_ref: true
+        add_git_labels:  true
         push: true
