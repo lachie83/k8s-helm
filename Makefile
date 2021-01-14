@@ -20,4 +20,4 @@ docker_push:
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
 
 test:
-	docker run $(DOCKER_IMAGE):$(DOCKER_TAG) version
+	docker run $(DOCKER_IMAGE):$(DOCKER_TAG) version -c
