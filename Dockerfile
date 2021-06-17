@@ -11,15 +11,13 @@ ENV HELM_LATEST_VERSION="v3.6.1"
 ARG TARGETARCH
 ENV TARGETARCH=${TARGETARCH:-amd64}
 
-RUN apk add --update ca-certificates
-
-RUN apk add --update -t deps \
- && apk add --update -t wget \
- && apk add --update -t git \
- && apk add --update -t openssl \
- && apk add --update -t bash
-
-RUN wget -q https://get.helm.sh/helm-${HELM_LATEST_VERSION}-linux-${TARGETARCH}.tar.gz \
+RUN apk add --update ca-certificates \
+ && apk add -t deps \
+ && apk add -t wget \
+ && apk add -t git \
+ && apk add -t openssl \
+ && apk add t bash \
+ && wget -q https://get.helm.sh/helm-${HELM_LATEST_VERSION}-linux-${TARGETARCH}.tar.gz \
  && tar -xf helm-${HELM_LATEST_VERSION}-linux-${TARGETARCH}.tar.gz \
  && mv linux-${TARGETARCH}/helm /usr/local/bin \
  && apk del --purge deps \
