@@ -16,7 +16,7 @@ RUN apk add --update ca-certificates \
  && apk add -t wget \
  && apk add -t git \
  && apk add -t openssl \
- && apk add t bash \
+ && apk add -t bash \
  && wget -q https://get.helm.sh/helm-${HELM_LATEST_VERSION}-linux-${TARGETARCH}.tar.gz \
  && tar -xf helm-${HELM_LATEST_VERSION}-linux-${TARGETARCH}.tar.gz \
  && mv linux-${TARGETARCH}/helm /usr/local/bin \
